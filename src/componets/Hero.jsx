@@ -7,76 +7,44 @@ import mongoImg from "../assets/mongo.png";
 import gcpImg from "../assets/gcp.png";
 import html5 from "../assets/html.png";
 import css from "../assets/css.png";
-import git from "../assets/git.png";
+import node from "../assets/node.png";
 
 import { Link } from "react-router-dom";
+
+const skills = [
+  { src: html5, alt: "HTML5" },
+  { src: css, alt: "CSS" },
+  { src: jsImg, alt: "JavaScript" },
+  { src: reactImg, alt: "React" },
+  { src: tsImg, alt: "TypeScript" },
+  { src: mongoImg, alt: "MongoDB" },
+  { src: tailwindImg, alt: "Tailwind CSS" },
+  { src: node, alt: "Git" },
+  { src: gcpImg, alt: "Google Cloud Platform" },
+];
 
 const Hero = () => {
   return (
     <div className="flex">
-      <div className="bg-[#04FC44] h-[45vh] basis-1/2 border-r-4 border-black">
-        <p className="px-3 pt-20 font-semibold text-6xl ">Hi I'm Sarbjot</p>
-        <p className="px-3 pt-3 text-xl ">I am a Software Engineer</p>
+      <div className="bg-[#04FC44] h-[45vh] basis-1/2 border-r-4 border-black flex flex-col justify-center pl-8">
+        <p className="font-semibold text-6xl mb-2">Hi I'm Sarbjot</p>
+        <p className="text-xl mb-8">I am a Software Engineer</p>
         <Link to="/about">
-          <button className="bg-black text-white mx-3 mt-3 px-4 py-3 rounded-lg mb-24">
-            Learn More
+          <button className="bg-black text-white mx-3 mt-3 px-4 py-3 rounded-lg transition duration-300 ease-in-out transform hover:scale-110">
+            About Me
           </button>
         </Link>
       </div>
-      <div className="bg-[#FCF204] basis-1/2">
-        <div className="flex flex-col items-center justify-center pt-8 space-y-4">
-          <div className="flex justify-center">
+      <div className="bg-[#FCF204] basis-1/2 flex justify-center items-center pt-6 pl-6">
+        <div className="grid grid-cols-3 gap-12">
+          {skills.map((skill, index) => (
             <img
-              src={html5}
-              className="w-10 h-10 mx-2 border-4 border-white rounded-full transition duration-300 ease-in-out transform hover:scale-110"
-              alt="HTML5"
+              key={index}
+              src={skill.src}
+              alt={skill.alt}
+              className="w-14 h-14 border-4 border-white rounded-md transition duration-300 ease-in-out transform hover:scale-125"
             />
-            <img
-              src={css}
-              className="w-10 h-10 mx-2 border-4 border-white rounded-full transition duration-300 ease-in-out transform hover:scale-110"
-              alt="CSS"
-            />
-            <img
-              src={jsImg}
-              className="w-10 h-10 mx-2 border-4 border-white rounded-full transition duration-300 ease-in-out transform hover:scale-110"
-              alt="JavaScript"
-            />
-          </div>
-          <div className="flex justify-center">
-            <img
-              src={reactImg}
-              className="w-10 h-10 mx-2 border-4 border-white rounded-full transition duration-300 ease-in-out transform hover:scale-110"
-              alt="React"
-            />
-            <img
-              src={tsImg}
-              className="w-10 h-10 mx-2 border-4 border-white rounded-full transition duration-300 ease-in-out transform hover:scale-110"
-              alt="TypeScript"
-            />
-            <img
-              src={mongoImg}
-              className="w-10 h-10 mx-2 border-4 border-white rounded-full transition duration-300 ease-in-out transform hover:scale-110"
-              alt="MongoDB"
-            />
-          </div>
-          <div className="flex justify-center">
-            <img
-              src={tailwindImg}
-              className="w-10 h-10 mx-2 border-4 border-white rounded-full transition duration-300 ease-in-out transform hover:scale-110"
-              alt="Tailwind CSS"
-            />
-            <img
-              src={git}
-              className="w-10 h-10 mx-2 border-4 border-white rounded-full transition duration-300 ease-in-out transform hover:scale-110"
-              alt="Git"
-            />
-
-            <img
-              src={gcpImg}
-              className="w-10 h-10 mx-2 border-4 border-white rounded-full transition duration-300 ease-in-out transform hover:scale-110"
-              alt="Google Cloud Platform"
-            />
-          </div>
+          ))}
         </div>
       </div>
     </div>

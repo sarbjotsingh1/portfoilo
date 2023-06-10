@@ -13,16 +13,16 @@ const Projects = () => {
               <div className="bg-[#04FC44] h-[67vh] flex justify-center items-center">
                 <div className="flex justify-center items-center">
                   <ProjectCard
-                    title="Project 1"
-                    description="Description of project 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    title="E - Commerce"
+                    description="Full Stack MERN Website with good user interface and experince where user can view, buy compare products. "
                   />
                   <ProjectCard
-                    title="Project 2"
-                    description="Description of project 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    title="Open-Funds"
+                    description="Crypto Crowdfunding platform deployed on near blockchain where users can show case there projects and get funding in cryto."
                   />
                   <ProjectCard
-                    title="Project 3"
-                    description="Description of project 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    title="Open-Funds"
+                    description="Crypto Crowdfunding platform deployed on near blockchain where users can show case there projects and get funding in cryto."
                   />
                 </div>
               </div>

@@ -5,6 +5,14 @@ import twitter from "../assets/twitter.png";
 import linkedin from "../assets/linkedin.png";
 import github from "../assets/github.png";
 
+const socialMediaLinks = [
+  { icon: github, alt: "Github", url: "https://github.com/example" },
+  { icon: twitter, alt: "Twitter", url: "https://twitter.com/example" },
+  { icon: linkedin, alt: "LinkedIn", url: "https://linkedin.com/example" },
+  { icon: instagram, alt: "Instagram", url: "https://instagram.com/example" },
+  { icon: mail, alt: "Mail", url: "mailto:example@example.com" },
+];
+
 const Footer = () => {
   const [email, setEmail] = useState("");
 
@@ -30,17 +38,26 @@ const Footer = () => {
         />
         <button
           type="submit"
-          className="py-2 px-4 bg-black text-white rounded-r-lg border-2 border-black focus:outline-none"
+          className="py-2 px-4 bg-black text-white rounded-r-lg border-2 border-black focus:outline-none transition duration-300 ease-in-out transform hover:scale-110"
         >
           Subscribe
         </button>
       </form>
       <div className="flex">
-        <img src={github} alt="Github" className="mx-2 w-8 h-8" />
-        <img src={twitter} alt="Twitter" className="mx-2" />
-        <img src={linkedin} alt="LinkedIn" className="mx-2" />
-        <img src={instagram} alt="Instagram" className="mx-2" />
-        <img src={mail} alt="Mail" className="mx-2" />
+        {socialMediaLinks.map((link, index) => (
+          <a
+            href={link.url}
+            key={index}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={link.icon}
+              alt={link.alt}
+              className="mx-2 w-8 h-8 transition duration-300 ease-in-out transform hover:scale-110"
+            />
+          </a>
+        ))}
       </div>
     </div>
   );
